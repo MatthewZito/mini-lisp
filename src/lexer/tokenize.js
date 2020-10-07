@@ -4,7 +4,7 @@ const {
     isNumber,
     isParenthesis,
     isQuote
-} = require("../utils/identifyTokens.js");
+} = require("../utils/identifyChar.js");
 
 const tokenize = input => {
     let cursor = 0;
