@@ -11,7 +11,7 @@ const isOpenParenthesis = char => char === CHARACTERS.OPEN_PAREN;
 
 const isCloseParenthesis = char => char === CHARACTERS.CLOSE_PAREN;
 
-const isParethesis = char => 
+const isParenthesis = char => 
     isOpenParenthesis(char) || isCloseParenthesis(char);
 
 const isQuote = char => char === CHARACTERS.QUOTE;
@@ -24,7 +24,7 @@ module.exports = {
     isNumber,
     isOpenParenthesis,
     isCloseParenthesis,
-    isParethesis,
+    isParenthesis,
     isQuote,
     isOperator
 };
