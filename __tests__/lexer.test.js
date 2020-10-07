@@ -39,8 +39,44 @@ describe("Evaluation of lexer", () => {
             const input = "(x y)";
             const result = [
                 { type: "Parenthesis", value: "("},
-                { type: "Letter", value: "x" },
-                { type: "Letter", value: "y" },
+                { type: "Name", value: "x" },
+                { type: "Name", value: "y" },
+                { type: "Parenthesis", value: ")"}
+            ];
+            expect(tokenize(input)).toEqual(result);
+        });
+
+        it("should tokenize a two-digit number", () => {
+            const input = "99";
+            const result = [
+                { type: "Number", value: 99 }
+            ];
+            expect(tokenize(input)).toEqual(result);
+        });
+
+        it("should tokenize a multi-symbol name", () => {
+            const input = "Name ";
+            const result = [
+                { type: "Name", value: "Name" }
+            ];
+            expect(tokenize(input)).toEqual(result);
+        });
+
+        it("should tokenize a string", () => {
+            const input = "\"VGhpc0lzQUJhc2U2NFN0cmluZwo=\"";
+            const result = [
+                { type: "String", value: "VGhpc0lzQUJhc2U2NFN0cmluZwo=" }
+            ];
+            expect(tokenize(input)).toEqual(result);
+        });
+
+        it("should tokenize an expression", () => {
+            const input = "(add 9 9)";
+            const result = [
+                { type: "Parenthesis", value: "("},
+                { type: "Name", value: "add" },
+                { type: "Number", value: 9 },
+                { type: "Number", value: 9 },
                 { type: "Parenthesis", value: ")"}
             ];
             expect(tokenize(input)).toEqual(result);

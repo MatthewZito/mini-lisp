@@ -28,19 +28,47 @@ const tokenize = input => {
         }
         
         if (isNumber(char)) {
+            let number = char;
+
+            while(isNumber(input[++cursor])) {
+                number += input[cursor];
+            }
+
             tokens.push({
                 type: "Number",
-                value: parseInt(char, 10)
+                value: parseInt(number, 10)
             });
-            cursor++
+
             continue;
         }
 
         if (isLetter(char)) {
+            let symbol = char;
+
+            while(isLetter(input[++cursor])) {
+                symbol += input[cursor];
+            }
+
             tokens.push({
-                type: "Letter",
-                value: char
+                type: "Name",
+                value: symbol
             });
+
+            continue;
+        }
+
+        if (isQuote(char)) {
+            let string = "";
+
+            while(!isQuote(input[++cursor])) {
+                string += input[cursor];
+            }
+
+            tokens.push({
+                type: "String",
+                value: string
+            });
+
             cursor++;
             continue;
         }
