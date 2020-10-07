@@ -1,0 +1,20 @@
+{
+  "name": "schemacs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "coverage": "jest --coverage && rimraf ./coverage",
+    "clean": "rimraf coverage",
+    "lint": "eslint ./",
+    "test": "jest && rimraf ./coverage",
+    "testmon": "jest --watch _tests_.*"
+  },
+  "keywords": [],
+  "author": "Matthew T Zito (goldmund)",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^26.5.2",
+    "rimraf": "^3.0.2"
+  }
+}
