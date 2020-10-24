@@ -18,7 +18,8 @@
     "lint": "eslint ./ --no-fix",
     "lint:fix": "eslint ./ --fix",
     "test": "jest && rimraf ./coverage",
-    "testmon": "jest --watch _tests_.*"
+    "testmon": "jest --watch _tests_.*",
+    "precommit": "npm run test && npm run format && npm run lint"
   },
   "devDependencies": {
     "eslint": "^7.10.0",
