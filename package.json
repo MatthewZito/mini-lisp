@@ -1,21 +1,30 @@
 {
-  "name": "schemacs",
+  "name": "skmx",
   "version": "1.0.0",
-  "description": "",
+  "description": "A custom Lisp implementation",
   "main": "index.js",
+  "keywords": [
+    "scheme",
+    "lisp",
+    "custom language"
+  ],
+  "author": "Matthew T Zito (goldmund)",
+  "license": "MIT",
   "scripts": {
     "coverage": "jest --coverage && rimraf ./coverage",
     "clean": "rimraf coverage",
-    "lint": "eslint ./",
+    "format": "prettier --check src/**/*.js",
+    "format:fix": "prettier --write src/**/*.js",
+    "lint": "eslint ./ --no-fix",
+    "lint:fix": "eslint ./ --fix",
     "test": "jest && rimraf ./coverage",
     "testmon": "jest --watch _tests_.*"
   },
-  "keywords": [],
-  "author": "Matthew T Zito (goldmund)",
-  "license": "MIT",
   "devDependencies": {
     "eslint": "^7.10.0",
+    "husky": "^4.3.0",
     "jest": "^26.5.2",
+    "prettier": "^2.1.2",
     "rimraf": "^3.0.2"
   }
 }

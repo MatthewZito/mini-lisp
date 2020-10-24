@@ -1,3 +1,5 @@
+/** @format */
+
 const {
     isLetter,
     isWhitespace,
@@ -20,17 +22,17 @@ const tokenize = input => {
             });
             cursor++;
             continue;
-        } 
+        }
 
         if (isWhitespace(char)) {
             cursor++;
             continue;
         }
-        
+
         if (isNumber(char)) {
             let number = char;
 
-            while(isNumber(input[++cursor])) {
+            while (isNumber(input[++cursor])) {
                 number += input[cursor];
             }
 
@@ -45,7 +47,7 @@ const tokenize = input => {
         if (isLetter(char)) {
             let symbol = char;
 
-            while(isLetter(input[++cursor])) {
+            while (isLetter(input[++cursor])) {
                 symbol += input[cursor];
             }
 
@@ -60,7 +62,7 @@ const tokenize = input => {
         if (isQuote(char)) {
             let string = "";
 
-            while(!isQuote(input[++cursor])) {
+            while (!isQuote(input[++cursor])) {
                 string += input[cursor];
             }
 
@@ -77,6 +79,6 @@ const tokenize = input => {
     return tokens;
 };
 
-module.exports = { 
+module.exports = {
     tokenize
 };

@@ -1,12 +1,17 @@
+/** @format */
+
 const { TYPES } = require("../constants/types.js");
 
-const { isOpenParenthesis, isCloseParenthesis } = require("../utils/identifyChar.js");
+const {
+    isOpenParenthesis,
+    isCloseParenthesis
+} = require("../utils/identifyChar.js");
 const { peek, pop } = require("../utils/navigate.js");
 
 const encapsulate = tokens => {
-    console.log({tokens})
+    console.log({ tokens });
     const token = pop(tokens);
-    console.log(token)
+    console.log(token);
     if (isOpenParenthesis(token.value)) {
         const expression = [];
 
@@ -14,7 +19,7 @@ const encapsulate = tokens => {
             expression.push(encapsulate(tokens));
         }
         pop(tokens);
-        console.log({expression})
+        console.log({ expression });
         return expression;
     }
     return token;
@@ -23,7 +28,7 @@ const encapsulate = tokens => {
 const parse = tokens => {
     // if Array, evaluate expression
     if (Array.isArray(tokens)) {
-        const [ first, ...rest ] = tokens;
+        const [first, ...rest] = tokens;
         return {
             type: "CallExpression",
             name: first.value,
@@ -33,7 +38,7 @@ const parse = tokens => {
 
     const token = tokens;
 
-    switch(token.type) {
+    switch (token.type) {
         case TYPES.NUMBER:
             return {
                 type: "NumericLiteral",

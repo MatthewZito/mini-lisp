@@ -1,3 +1,5 @@
+/** @format */
+
 const { CHARACTERS } = require("../constants/characters.js");
 const { EXPRESSIONS } = require("../constants/regexpr.js");
 
@@ -11,7 +13,7 @@ const isOpenParenthesis = char => char === CHARACTERS.OPEN_PAREN;
 
 const isCloseParenthesis = char => char === CHARACTERS.CLOSE_PAREN;
 
-const isParenthesis = char => 
+const isParenthesis = char =>
     isOpenParenthesis(char) || isCloseParenthesis(char);
 
 const isQuote = char => char === CHARACTERS.QUOTE;
