@@ -4,4 +4,4 @@ useTabs: false
 semi: true
 singleQuote: false
 arrowParens: "avoid"
-insertPragma: true
+insertPragma: false

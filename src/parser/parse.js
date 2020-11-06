@@ -1,17 +1,15 @@
-/** @format */
-
-const { TYPES } = require("../constants/types.js");
+const { TYPES } = require("../constants");
 
 const {
     isOpenParenthesis,
-    isCloseParenthesis
-} = require("../utils/identifyChar.js");
-const { peek, pop } = require("../utils/navigate.js");
+    isCloseParenthesis,
+    peek,
+    pop
+} = require("../utils");
 
 const encapsulate = tokens => {
-    console.log({ tokens });
     const token = pop(tokens);
-    console.log(token);
+
     if (isOpenParenthesis(token.value)) {
         const expression = [];
 
@@ -19,7 +17,6 @@ const encapsulate = tokens => {
             expression.push(encapsulate(tokens));
         }
         pop(tokens);
-        console.log({ expression });
         return expression;
     }
     return token;
@@ -46,7 +43,7 @@ const parse = tokens => {
             };
         case TYPES.STRING:
             return {
-                type: "StringLiteral",
+                type: "StringValue",
                 value: token.value
             };
         case TYPES.NAME:

@@ -1,7 +1,4 @@
-/** @format */
-
-const { CHARACTERS } = require("../constants/characters.js");
-const { EXPRESSIONS } = require("../constants/regexpr.js");
+const { CHARACTERS, EXPRESSIONS } = require("../constants");
 
 const isLetter = char => EXPRESSIONS.LETTER.test(char);
 

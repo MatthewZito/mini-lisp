@@ -1,5 +1,3 @@
-/** @format */
-
 const EXPRESSIONS = {
     LETTER: /[a-zA-Z]/,
     WHITESPACE: /\s+/,

@@ -1,5 +1,3 @@
-/** @format */
-
 const CHARACTERS = {
     OPERATORS: ["+", "-", "*", "/", "%"],
     OPEN_PAREN: "(",

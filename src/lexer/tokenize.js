@@ -1,12 +1,10 @@
-/** @format */
-
 const {
     isLetter,
     isWhitespace,
     isNumber,
     isParenthesis,
     isQuote
-} = require("../utils/identifyChar.js");
+} = require("../utils");
 
 const tokenize = input => {
     let cursor = 0;

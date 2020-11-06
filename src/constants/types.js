@@ -1,5 +1,3 @@
-/** @format */
-
 const TYPES = {
     NUMBER: "Number",
     STRING: "String",

@@ -1,12 +1,14 @@
-const { parse } = require("../src/parser/parse.js");
+const { parse } = require("../src/parser");
 
 describe("Evaluation of parser", () => {
     describe("Evaluation of AST construction", () => {
         it("should parse a token of type Number", () => {
-            const tokens = [{
-                type: "Number",
-                value: 9
-            }];
+            const tokens = [
+                {
+                    type: "Number",
+                    value: 9
+                }
+            ];
 
             const ast = { type: "NumericLiteral", value: 9 };
 
@@ -14,21 +16,28 @@ describe("Evaluation of parser", () => {
         });
 
         it("should parse a token of type String", () => {
-            const tokens = [{
-                type: "String",
-                value: "c2ljcElzVGhlTmV3QmlibGUK"
-            }];
+            const tokens = [
+                {
+                    type: "String",
+                    value: "c2ljcElzVGhlTmV3QmlibGUK"
+                }
+            ];
 
-            const ast = { type: "StringLiteral", value: "c2ljcElzVGhlTmV3QmlibGUK" };
+            const ast = {
+                type: "StringValue",
+                value: "c2ljcElzVGhlTmV3QmlibGUK"
+            };
 
             expect(parse(tokens)).toEqual(ast);
         });
 
         it("should parse an Identifier", () => {
-            const tokens = [{
-                type: "Name",
-                value: "x"
-            }];
+            const tokens = [
+                {
+                    type: "Name",
+                    value: "x"
+                }
+            ];
 
             const ast = { type: "Identifier", value: "x" };
 
@@ -41,10 +50,10 @@ describe("Evaluation of parser", () => {
                 { type: "Name", value: "add" },
                 { type: "Number", value: 9 },
                 { type: "Number", value: 3 },
-                { type: "Parenthesis", value: ")" },
+                { type: "Parenthesis", value: ")" }
             ];
 
-            const ast = { 
+            const ast = {
                 type: "CallExpression",
                 name: "add",
                 arguments: [
