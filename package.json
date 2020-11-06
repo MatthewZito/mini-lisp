@@ -1,5 +1,5 @@
 {
-  "name": "skmx",
+  "name": "mini-lisp",
   "version": "1.0.0",
   "description": "A custom Lisp implementation",
   "main": "index.js",
@@ -22,6 +22,9 @@
     "precommit": "npm run test && npm run format && npm run lint"
   },
   "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "babel-eslint": "^10.1.0",
     "eslint": "^7.10.0",
     "husky": "^4.3.0",
     "jest": "^26.5.2",
