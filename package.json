@@ -2,7 +2,10 @@
   "name": "mini-lisp",
   "version": "1.0.0",
   "description": "A custom Lisp implementation",
-  "main": "index.js",
+  "main": "src/repl/repl.js",
+  "bin": {
+    "mini-lisp": "bin/mini-lisp"
+  },
   "keywords": [
     "scheme",
     "lisp",
